@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            color: #333;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Quick Links Section */
+        .quick-links {
+            padding: 60px 0;
+        }
+
+        .quick-links h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .link-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid transparent;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .link-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .link-card.github i {
+            color: #333;
+        }
+
+        .link-card.resume i {
+            color: #e74c3c;
+        }
+
+        .link-card.linkedin i {
+            color: #0077b5;
+        }
+
+        .link-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .link-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Featured Projects */
+        .projects {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f3f4 100%);
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .project-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .project-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: #ecf0f1;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .about p {
+                font-size: 1.1rem;
+            }
+            
+            .quick-links h2,
+            .projects h2 {
+                font-size: 2rem;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .header {
+                padding: 50px 0;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .link-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="header">
+        <div class="container">
+            <h1>Anandha Kannan</h1>
+            <p class="tagline">Aspiring App Developer | Web Development | IoT  Learner |</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <p>I'm passionate about building innovative applications, exploring IoT , and developing user-friendly solutions in web and mobile development.</p>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <div class="container">
+            <h2>Connect With Me</h2>
+            <div class="links-grid">
+                <a href="https://github.com/New-Robotics-World" class="link-card github" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>Explore my code repositories and open-source contributions</p>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/anandha-kannan-8a355b27a" class="link-card linkedin" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me professionally and view my career journey</p>
+                </a>
+                
+                <a href="D:\kannan\profitional\course\web development\Dashboard\resume.pdf" class="link-card resume" target="_blank">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Resume</h3>
+                    <p>Download my complete professional resume</p>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+       <!-- Featured Projects Section -->
+    <section class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>X/O Game for android</h3>
+                    <p>The app offers a smooth and user-friendly interface, allowing players to enjoy the classic X and O game either against a friend or the system.</p>
+                    <a href="https://github.com/New-Robotics-World/x-o-game-" class="project-btn" target="_blank">View Project</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Birthday Wish & Treasure Hunt Website</h3>
+                    <p>An engaging website designed to celebrate birthdays with fun games and interactive treasure hunts. It allows friends to send wishes and participate in online activities, making celebrations more memorable.</p>
+                    <a href="https://new-robotics-world.github.io/BirthdayWish/index.html" class="project-btn" target="_blank">View Project</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Keyboard Tracking Tool</h3>
+                    <p>A lightweight utility developed in Python to monitor and track system keyboard inputs. It is designed for educational and security-related purposes, focusing on system activity analysis.</p>
+                    <a href="https://github.com/New-Robotics-World/trackertool" class="project-btn" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AK | Student @ St. Joseph's College</p>
+        </div>
+    </footer>
+</body>
+</html>
